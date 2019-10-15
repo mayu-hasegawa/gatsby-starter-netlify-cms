@@ -30,6 +30,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
+    {resolve: `gatsby-source-filesystem`, options: { path: `./src/img/` } },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
@@ -73,5 +74,14 @@ module.exports = {
       },
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `React`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
   ],
 }
